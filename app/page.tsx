@@ -14,7 +14,6 @@ export default function Home() {
     setGenerating(true);
     try {
       const key = Keypair.generate();
-      console.log(key);
       toast.success("Solana wallet created! 🎉⚡");
       setkeyPair(key.publicKey.toBase58());
     } catch (error) {
@@ -23,8 +22,6 @@ export default function Home() {
       setGenerating(false);
     }
   };
-
-  console.log(balance);
 
   const handleFetchBalance = async () => {
     if (keyPair) {
